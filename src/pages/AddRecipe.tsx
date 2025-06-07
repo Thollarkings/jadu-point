@@ -11,7 +11,7 @@ const AddRecipe = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { addRecipe } = useRecipes();
-  const { user } = useAuth();
+  const { user } = useAuth();   
 
   useEffect(() => {
     // Check if admin is logged in (for backward compatibility with existing auth)
@@ -22,7 +22,7 @@ const AddRecipe = () => {
       navigate('/admin/login');
       return;
     }
-    
+    // new commit
     // Check if session is still valid (24 hours)
     const twentyFourHours = 24 * 60 * 60 * 1000;
     if (Date.now() - parseInt(loginTime) > twentyFourHours) {
